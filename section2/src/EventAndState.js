@@ -1,11 +1,20 @@
 import React, {Component} from 'react';
 
-class SimpleEvents extends Component {
+class EventAndState extends Component {
+    constructor() {
+        super();
+        this.state = {
+            inputText: ""
+        }
+    }
     handleClick() {
         console.log("Test")
     }
-    handleChange() {
-        console.log("user changed input")
+    handleChange = (event) => {
+       this.setState({
+           inputText : event.target.value
+       })
+        console.log(this.state.inputText)
     }
     handleSubmit(event) {
         event.preventDefault();
@@ -23,4 +32,4 @@ class SimpleEvents extends Component {
         )
     }
 }
-export default SimpleEvents;
+export default EventAndState;
