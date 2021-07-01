@@ -7,8 +7,10 @@ class EventAndState extends Component {
             inputText: ""
         }
     }
-    handleClick() {
-        console.log("Test")
+    handleClick = ()=> {
+        this.setState({
+            inputText : ""
+        })
     }
     handleChange = (event) => {
        this.setState({
@@ -16,7 +18,10 @@ class EventAndState extends Component {
        })
         console.log(this.state.inputText)
     }
-    handleSubmit(event) {
+    handleSubmit = (event)=> {
+        this.setState({
+            inputText : "State is cool"
+        })
         event.preventDefault();
         console.log("Form submitted")
         
@@ -24,6 +29,7 @@ class EventAndState extends Component {
     render() {
         return(
             <div>
+            <h1>{this.state.inputText}</h1>
             <form onSubmit= {this.handleSubmit}>
                 <button onClick = {this.handleClick} >Click Me!</button>
                 <input onChange= {this.handleChange} type="text" placeholder="Enter some text!"/>
