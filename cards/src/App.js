@@ -1,11 +1,24 @@
+import React, {Component} from 'react';
 import './App.css';
+import QuizBar from './components/QuizBar';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Afrouz</h1>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+
+    }
+  }
+  
+  render () {
+    return(
+      <div className="App">
+        <QuizBar />
+      </div>
+    );
+  }
+    
+  
 }
 
 export default App;
